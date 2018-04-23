@@ -4,6 +4,36 @@
 
 //takes an array and then
 
+function compare (a, b){
+  return a > b;
+}
+
+function swap (a, b) {
+  let comparator = a;
+  if(compare(a, b)){
+    a = b;
+    b = comparator;
+  }
+  return [a, b];
+}
+
+function bubbleSort(arr){
+  let counter = arr.length
+  while(counter){
+    for(let i = 0; i < counter; i++){
+      let first = arr[i];
+      let second = arr[i + 1];
+      let numbers = swap(first, second);
+      first = numbers[0];
+      second = numbers[1];
+    }
+  }
+  return arr;
+}
+
+bubbleSort([5, 67, 34, 2, 16, 12, 16, 17, 11, 5, 10, 13, 40, 19]);
+
+
 
 //it calls compare
 //while iteration counter --- loop names a,b a = arr[i], arr[i+1]
